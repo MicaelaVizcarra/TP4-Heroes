@@ -4,6 +4,7 @@ const app = express();
 const port = 3030;
 
 //console.log (__dirname);
+app.use(express.static('public'))
 
 app.get('/', (req,res) => res.sendFile(path.join(__dirname, 'views', 'index.html')))
 app.get('/babbage', (req,res) => res.sendFile(path.join(__dirname, 'views', 'babbage.html')))
@@ -13,4 +14,6 @@ app.get('/hamilton', (req,res) => res.sendFile(path.join(__dirname, 'views', 'ha
 app.get('/hopper', (req,res) => res.sendFile(path.join(__dirname, 'views', 'hopper.html')))
 app.get('/lovelace', (req,res) => res.sendFile(path.join(__dirname, 'views', 'lovelace.html')))
 app.get('/turing', (req,res) => res.sendFile(path.join(__dirname, 'views', 'turing.html')))
+
+
 app.listen(port, () => console.log('Server running in http://localhost:' + port))
